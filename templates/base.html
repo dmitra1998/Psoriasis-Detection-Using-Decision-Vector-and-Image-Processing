@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Psoriasis Detection and cure</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:bisque;">
+<div class="container">
+    <h2 style="font-size:45px;color:orange;"><u>ENTER DETAILS:</u></h2>
+  <form id="decisions" action="/result" method="post"  enctype="multipart/form-data">
+		<h3 style="font-size:30px;color:blueviolet;"><li>FAMILY DETAILS:-</li></h3>
+
+		<label style="font-size:20px;color:green;"><i>Parent have psoriasis?</i></label>
+		<div class="radio">
+		<label style="font-size:20px;"><input type="radio" name="d1" value="1" required>Yes</label>
+		</div>
+		<div class="radio">
+		  <label style="font-size:20px;"><input type="radio" name="d1" value="0" required>No</label>
+		</div>
+
+		<label style="font-size:20px;color:green;"><i>Both parents have psoriasis?</i></label>
+		<div class="radio">
+		<label style="font-size:20px;"><input type="radio" name="d2" value="1" required>Yes</label>
+		</div>
+		<div class="radio">
+		  <label style="font-size:20px;"><input type="radio" name="d2" value="0" required>No</label>
+		</div>
+
+		<label style="font-size:20px;color:green;"><i>Siblings have psoriasis?</i></label>
+		<div class="radio">
+		<label style="font-size:20px;"><input type="radio" name="d3" value="1" required>Yes</label>
+		</div>
+		<div class="radio">
+		  <label style="font-size:20px;"><input type="radio" name="d3" value="0" required>No</label>
+		</div>
+
+		<h3 style="font-size:30px;color:blueviolet;"><li>DETAILS ABOUT THE PSORIASIS:-</li></h3>
+		<br>
+		<label style="font-size:20px;color:green;"><li><u>Checking for plaque psoriasis:</u></li></label><br>
+		<label style="font-size:20px;color:green;"><i>Do you have raised skin or/and inflamed skin or/and red skin covered with silvery white scales?</i></label>
+		<div class="radio">
+		<label style="font-size:20px;"><input type="radio" name="d4" value="1" required>Yes</label>
+		</div>
+		<div class="radio">
+		  <label style="font-size:20px;"><input type="radio" name="d4" value="0" required>No</label>
+		</div>
+
+		<br>
+		<label style="font-size:20px;color:green;"><li><u>Checking for guttate psoriasis:</u></li></label><br>
+		<label style="font-size:20px;color:green;"><i>Is that red small, separate and drop-shaped?</i></label>
+		<div class="radio">
+		<label style="font-size:20px;"><input type="radio" name="d5" value="1" required>Yes</label>
+		</div>
+		<div class="radio">
+		  <label style="font-size:20px;"><input type="radio" name="d5" value="0" required>No</label>
+		</div>
+
+		<br>
+		<label style="font-size:20px;color:green;"><li><u>Checking for fluctural or inverse psoriasis:</u></li></label><br>
+		<label style="font-size:20px;color:green;"><i>Shedding of skin and red and/or shiny and/or smooth  in skinfolds?</i></label>
+		<div class="radio">
+		<label style="font-size:20px;"><input type="radio" name="d6" value="1" required>Yes</label>
+		</div>
+		<div class="radio">
+		  <label style="font-size:20px;"><input type="radio" name="d6" value="0" required>No</label>
+		</div>
+
+		<br>
+		<label style="font-size:20px;color:green;"><li><u>Checking for nail psoriasis:</u></li></label><br>
+		<label style="font-size:20px;color:green;"><i>Is there nail pitting, grooves, discoloration, loosening or crubling of the nail,
+		<br>thickened skin under the nail, colored patches or spots under the nail?</i></label>
+		<div class="radio">
+		<label style="font-size:20px;"><input type="radio" name="d7" value="1" required>Yes</label>
+		</div>
+		<div class="radio">
+		  <label style="font-size:20px;"><input type="radio" name="d7" value="0" required>No</label>
+		</div>
+
+		<br>
+		<label style="font-size:20px;color:green;"><li><u>Checking for scalp psoriasis:</u></li></label><br>
+		<label style="font-size:20px;color:green;"><i>Is there severe dandruff, paiful, itchy and very noticible at the hairline, can complicate regular hair hygiene and/or
+		<br>excessive scratching causing hairloss?:</i></label>
+		<div class="radio">
+		<label style="font-size:20px;"><input type="radio" name="d8" value="1" required>Yes</label>
+		</div>
+		<div class="radio">
+		  <label style="font-size:20px;"><input type="radio" name="d8" value="0" required>No</label>
+		</div>
+
+		<br>
+		<label style="font-size:20px;color:green;"><li><u>Checking for pustural psoriasis:</u></li></label><br>
+		<label style="font-size:20px;color:green;"><i>Is there pustules developing fast surrounded by red skin?</i></label>
+		<div class="radio">
+		<label style="font-size:20px;"><input type="radio" name="d9a" value="1" required>Yes</label>
+		</div>
+		<div class="radio">
+		  <label style="font-size:20px;"><input type="radio" name="d9a" value="0" required>No</label>
+		</div>
+		<label style="font-size:20px;color:green;"><i>Are you also suffering from fever,chills,rapid pulse, muscle weakness or/and loss of appetite?</i></label>
+		<div class="radio">
+		<label style="font-size:20px;"><input type="radio" name="d9b" value="1" required>Yes</label>
+		</div>
+		<div class="radio">
+		  <label style="font-size:20px;"><input type="radio" name="d9b" value="0" required>No</label>
+		</div>
+
+		<br>
+		<label style="font-size:20px;color:green;"><li><u>Checking for Erythrodemic psoriasis:</u></li></label><br>
+		<label style="font-size:20px;color:green;"><i>Is there severe burns, widespread, red and scaly?:</i></label>
+		<div class="radio">
+		<label style="font-size:20px;"><input type="radio" name="d10" value="1" required>Yes</label>
+		</div>
+		<div class="radio">
+		  <label style="font-size:20px;"><input type="radio" name="d10" value="0" required>No</label>
+		</div>
+
+		<br>
+		<label style="font-size:20px;color:green;"><li><u>Checking for psoriatic arthritis psoriasis:</u></li></label><br>
+		<label style="font-size:20px;color:green;"><i>Are you having swollen or tender joint on one or both sides of our body and/or
+		<br>morning stiffness and/or swollen fingers and toes and/or painful muscles and tendors and/or
+		<br>scaly skin patches(which may get worse when joint pair flares upper-alpha) and/or
+        <br>flaky scalp and/or fatigue and/or nail pitting and/or separation of nail from the nail bed
+		<br>eye redness and/or eye pain and/or spinal pain and stiffness and/or
+		<br>pain, swelling and weakness in hips, knees, ankles, feet, elbow, hands, wrists and other joints?</i></label>
+		<div class="radio">
+		<label style="font-size:20px;"><input type="radio" name="d11a" value="1" required>Yes</label>
+		</div>
+		<div class="radio">
+		  <label style="font-size:20px;"><input type="radio" name="d11a" value="0" required>No</label>
+		</div>
+		<label style="font-size:20px;color:green;"><i>Is the above happens in five or more joint on both sides of body?:</i></label>
+		<div class="radio">
+		<label style="font-size:20px;"><input type="radio" name="d11b" value="1" required>Yes</label>
+		</div>
+		<div class="radio">
+		  <label style="font-size:20px;"><input type="radio" name="d11b" value="0" required>No</label>
+		</div>
+		<label style="font-size:20px;color:green;"><i>Is the above happens in less than five joint on both or same side of the body?:</i></label>
+		<div class="radio">
+		<label style="font-size:20px;"><input type="radio" name="d11c" value="1" required>Yes</label>
+		</div>
+		<div class="radio">
+		  <label style="font-size:20px;"><input type="radio" name="d11c" value="0" required>No</label>
+		</div>
+		<h4 style="font-size:30px;color:blueviolet;">Select image to upload:</h4>
+	  <br>
+    		<input type="file" name="fileToUpload" id="fileToUpload"/>
+	  <br>
+      <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+	{% block content %}
+
+{% endblock %}
+</div>
+<br>
+
+</body>
+</html>
